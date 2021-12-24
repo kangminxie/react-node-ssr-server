@@ -11,7 +11,7 @@
     "build": "npm-run-all --parallel prod:*",
     "prod:build-server": "webpack --mode production --config webpack.config.server.js",
     "prod:build-client": "webpack --mode production --config webpack.config.client.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "keywords": [
     "React",
