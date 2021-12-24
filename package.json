@@ -8,7 +8,7 @@
     "npm": "6.14.11"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "node build/server-bundle.js",
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --mode development --watch build --exec \"node build/server-bundle.js\"",
     "dev:build-server": "webpack --mode development --config webpack.config.server.js --watch",
@@ -59,8 +59,6 @@
     "react-hot-loader": "^4.13.0",
     "react-i18next": "11.12.0",
     "react-redux": "^7.2.2",
-    "react-router-config": "^5.1.1",
-    "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
@@ -77,6 +75,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "npm-run-all": "^4.1.5",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0",
     "serialize-javascript": "^6.0.0",
     "webpack-merge": "^5.8.0",
     "webpack-node-externals": "^3.0.0"
