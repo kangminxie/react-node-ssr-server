@@ -40,6 +40,7 @@ $ npm run build
 ### heroku information
 - https://salty-refuge-79764.herokuapp.com/
 - git.heroku.com/salty-refuge-79764.git main
+- https://dashboard.heroku.com/apps/salty-refuge-79764
 
 Reference:
 
