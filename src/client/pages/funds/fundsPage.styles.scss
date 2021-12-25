@@ -1,3 +1,14 @@
 #funds-page {
-  background-color: lightgoldenrodyellow;
+  min-height: 500px;
+
+  .funds-header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 32px;
+    background-color: antiquewhite;
+  }
+
+  .funds-content {
+    padding: 16px 32px;
+  }
 }

@@ -15,22 +15,28 @@ type Props = {
 
 class HomePage extends React.Component<Props, State> {
   componentDidMount() {
-    const { dispatch, pageNum } = this.props;
-    dispatch(fetchAllFunds(pageNum));
+    const { dispatch, funds, pageNum } = this.props;
+    if (!funds || funds.length === 0) {
+      dispatch(fetchAllFunds(pageNum));
+    }
   }
 
   render() {
     const { funds } = this.props;
     return (
       <div id='funds-page'>
-        <h1>Funds Page</h1>
-        <div>Total number of funds: {funds.length}</div>
-        <ul>
-          {funds &&
-            funds.map((each) => {
-              return <li key={each.id}>{`${each.id} | ${each.name}`}</li>;
-            })}
-        </ul>
+        <section className='funds-header'>
+          <h4>Research Funds</h4>
+        </section>
+        <div className='funds-content'>
+          <div>Total number of funds: {funds.length}</div>
+          <ul>
+            {funds &&
+              funds.map((each) => {
+                return <li key={each.id}>{`Id: ${each.id} | ${each.name}`}</li>;
+              })}
+          </ul>
+        </div>
       </div>
     );
   }

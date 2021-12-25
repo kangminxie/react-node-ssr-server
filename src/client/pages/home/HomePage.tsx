@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Table } from 'react-bootstrap';
 import { AccountDetail, AppState } from '../../types';
 
 import './homePage.styles.scss';
@@ -17,8 +18,38 @@ class HomePage extends React.Component<Props, State> {
       currentAccount && currentAccount.name ? currentAccount.name : 'user';
     return (
       <div id='home-page'>
-        <h1>Home Page</h1>
-        <div>Welcome to the home page, {user}!</div>
+        <section className='home-header'>
+          <h4>Welcome, {user}!</h4>
+        </section>
+        <div className='home-content'>
+          <div className='content-title'>Liverpool Main Content</div>
+          <div className='my-table-wrapper mx-4'>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td>James</td>
+                  <td>Milner</td>
+                  <td>@jamesm</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>Jordan</td>
+                  <td>Henderson</td>
+                  <td>@jordanj</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,3 +1,19 @@
 #landing-page {
-  background-color: aliceblue;
+  min-height: 600px;
+  padding: 0;
+
+  // override bootstrap4's default style
+  .jumbotron {
+    padding: 24px 40px;
+    margin-bottom: 12px;
+  }
+
+  .para-content {
+    padding: 8px 0;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
