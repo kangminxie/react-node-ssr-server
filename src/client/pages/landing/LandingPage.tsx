@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Container, Jumbotron } from 'react-bootstrap';
+import WelcomeArea from './WelcomeArea';
 import { AppDispatch, HttpQueryParam } from '../../types';
 
 import './landingPage.styles.scss';
@@ -11,8 +13,11 @@ class LandingPage extends React.Component<LandingProps, LandingState> {
   render() {
     return (
       <div id='landing-page'>
-        <h1>Landing Page</h1>
-        <div>This is Landing Page!</div>
+        <Jumbotron>
+          <Container>
+            <WelcomeArea />
+          </Container>
+        </Jumbotron>
       </div>
     );
   }

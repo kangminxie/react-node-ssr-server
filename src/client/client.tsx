@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './store';
 import wrappedRoutes from '../server/routeConfigsHelper';
 
+import './client.styles.scss';
+
 const ClientApp = () => {
   return (
     <Provider store={store}>

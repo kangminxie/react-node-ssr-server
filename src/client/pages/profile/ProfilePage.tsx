@@ -25,12 +25,26 @@ class ProfilePage extends React.Component<Props, State> {
     }
     return (
       <div id='profile-page'>
-        <h1>My Profile Page</h1>
-        <div className='profile--content'>
-          My AccountId: {currentAccount.id}
-          My Username: {currentAccount.username} (role={currentAccount.role}) My
-          DisplayName: {currentAccount.name}
-          My Email: {currentAccount.email}
+        <section className='profile-header'>
+          <h4>Manage my Profile</h4>
+        </section>
+        <div className='profile-content'>
+          <div className='info-cell'>
+            My AccountId: <span className='info-data'>{currentAccount.id}</span>
+          </div>
+          <div className='info-cell'>
+            My Username:{' '}
+            <span className='info-data'>{currentAccount.username}</span>
+          </div>
+          <div className='info-cell'>
+            My Role: <span className='info-data'>{currentAccount.role}</span>
+          </div>
+          <div className='info-cell'>
+            My Name: <span className='info-data'>{currentAccount.name}</span>
+          </div>
+          <div className='info-cell'>
+            My Email: <span className='info-data'>{currentAccount.email}</span>
+          </div>
         </div>
       </div>
     );

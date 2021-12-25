@@ -1,3 +1,18 @@
 #profile-page {
-  background-color: lightgreen;
+  min-height: 500px;
+
+  .profile-header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 32px;
+    background-color: lightsteelblue;
+  }
+
+  .profile-content {
+    padding: 16px 32px;
+
+    .info-data {
+      font-weight: 550;
+    }
+  }
 }
