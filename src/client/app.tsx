@@ -20,9 +20,10 @@ const App = ({ route }: AppProp) => {
   );
 };
 
-const loadData = (dispatch: AppDispatch, query: HttpQueryParam) => {
+const loadData = async (dispatch: AppDispatch, query: HttpQueryParam) => {
   console.log('===> APP load data fetchCurrentUser ===');
-  return dispatch(fetchCurrentUser());
+  await dispatch(fetchCurrentUser());
+  return;
 };
 
 export default {
