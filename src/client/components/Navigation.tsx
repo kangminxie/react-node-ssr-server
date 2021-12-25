@@ -2,9 +2,9 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link, withRouter } from 'react-router-dom';
+import * as H from 'history';
 import { AccountDetail, AppDispatch, AppState } from '../types';
 import { loginUser, logoutCurrentUser } from '../actions/auth';
-import * as H from 'history';
 
 type Props = {
   dispatch: AppDispatch;
@@ -16,22 +16,23 @@ type Props = {
 const Navigation: React.FC<Props> = (props) => {
   const { currentAccount, dispatch, history } = props;
 
-  const handleClickLoginButton = () => {
-    dispatch(loginUser());
+  const handleClickLoginButton = async () => {
+    await dispatch(loginUser());
     location.reload();
   };
 
-  const handleClickLogoutButton = () => {
-    dispatch(logoutCurrentUser());
+  const handleClickLogoutButton = async () => {
+    await dispatch(logoutCurrentUser());
     history.push('/');
+    location.reload();
   };
 
-  const authButton =
-    currentAccount && currentAccount.id ? (
-      <button onClick={handleClickLogoutButton}>Logout</button>
-    ) : (
-      <button onClick={handleClickLoginButton}>Login</button>
-    );
+  const isLoggedIn = currentAccount && currentAccount.id;
+  const authButton = isLoggedIn ? (
+    <button onClick={handleClickLogoutButton}>Logout</button>
+  ) : (
+    <button onClick={handleClickLoginButton}>Login</button>
+  );
 
   return (
     <div className='nav-wrapper'>
@@ -45,6 +46,12 @@ const Navigation: React.FC<Props> = (props) => {
         <li>
           <Link to='/funds'>Funds</Link>
         </li>
+        {isLoggedIn && (
+          <li>
+            <Link to='/profile'>Profile</Link>
+          </li>
+        )}
+
         <li>{authButton}</li>
       </ul>
     </div>

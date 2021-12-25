@@ -1,6 +1,11 @@
 const DEFAULT_NODE_SERVER_PORT = 3000;
 export const NODE_SERVER_PORT = process.env.PORT || DEFAULT_NODE_SERVER_PORT
 
+const IS_PROD = (process.env.NODE_ENV === 'production');
+export const RENDERING_SEVER_URL = IS_PROD
+  ? 'https://salty-refuge-79764.herokuapp.com/'
+  : `localhost:${NODE_SERVER_PORT}`;
+
 // change this if locally
 // export const IS_PROD = (process.env.NODE_ENV === 'production');
 // export const API_SERVER_BASE_URL = IS_PROD ? 'https://enigmatic-refuge-09494.herokuapp.com/' : 'http://localhost:8080';

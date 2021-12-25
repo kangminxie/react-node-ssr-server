@@ -1,8 +1,9 @@
 import { RouteConfig } from 'react-router-config';
 import App from '../client/app';
 import LandingPage from '../client/pages/landing/LandingPage';
-import HomePage from '../client/pages/HomePage';
-import FundsPage from '../client/pages/FundsPage';
+import HomePage from '../client/pages/home/HomePage';
+import FundsPage from '../client/pages/funds/FundsPage';
+import ProfilePage from '../client/pages/profile/ProfilePage';
 import NotFoundPage from '../client/pages/NotFoundPage';
 
 const wrappedRoutes: RouteConfig[] = [
@@ -17,6 +18,11 @@ const wrappedRoutes: RouteConfig[] = [
       {
         ...HomePage,
         path: '/home',
+        exact: true,
+      },
+      {
+        ...ProfilePage,
+        path: '/profile',
         exact: true,
       },
       {

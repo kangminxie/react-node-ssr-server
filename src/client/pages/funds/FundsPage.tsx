@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { FundInfo, AppDispatch, AppState, HttpQueryParam } from '../types';
+import { FundInfo, AppDispatch, AppState, HttpQueryParam } from '../../types';
 import { connect } from 'react-redux';
-import { fetchAllFunds } from '../actions/fund';
+import { fetchAllFunds } from '../../actions/fund';
+
+import './fundsPage.styles.scss';
 
 type State = {};
 

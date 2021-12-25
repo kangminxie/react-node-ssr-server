@@ -1,3 +1,4 @@
+import * as HttpStatus from 'http-status';
 import { AppDispatch, AppState, AccountDetail } from '../types';
 
 export enum authActionType {
@@ -17,7 +18,7 @@ export const fetchCurrentUser = () => async (dispatch: AppDispatch, getState: Ap
   // console.log("--------- fetchCurrentUser: ");
   // console.log("--------- fetchCurrentUser res.data: " + JSON.stringify(res.data));
   // console.log("--------- fetchCurrentUser res.status: " + res.status);
-  if (res && res.status === 200) {
+  if (res && res.status === HttpStatus.OK) {
     console.log("--------- fetchCurrentUser OK");
     const { id, name, username, email, role } = res.data;
     dispatch({
@@ -47,7 +48,7 @@ export const loginUser = () => async (dispatch: AppDispatch, getState: AppState,
   });
   // console.log("--------- loginUser res.data: " + JSON.stringify(res));
   // console.log("--------- loginUser res.status: " + res.status);
-  if (res.status === 200) {
+  if (res.status === HttpStatus.OK) {
     dispatch(fetchCurrentUser());
   }
 };
@@ -56,7 +57,7 @@ export const logoutCurrentUser = () => async (dispatch: AppDispatch, getState: A
   console.log("--------- logoutCurrentUser: ");
   const res = await api.post('/logout');
   console.log("--------- logoutCurrentUser res.status: " + res.status);
-  if (res && res.status === 200) {
+  if (res && res.status === HttpStatus.OK) {
     dispatch({
       type: authActionType.LOAD_CURRENT_ACCOUNT,
       payload: undefined

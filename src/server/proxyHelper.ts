@@ -1,10 +1,10 @@
 import * as proxy from 'express-http-proxy';
 import { RequestOptions } from 'http';
-import { NODE_SERVER_PORT, API_SERVER_BASE_URL } from './constants';
+import { API_SERVER_BASE_URL, RENDERING_SEVER_URL } from './constants';
 
 const options: proxy.ProxyOptions = {
   proxyReqOptDecorator: (proxyReqOpts: RequestOptions) => {
-    proxyReqOpts.headers['x-forwarded-host'] = `localhost:${NODE_SERVER_PORT}`;
+    proxyReqOpts.headers['x-forwarded-host'] = RENDERING_SEVER_URL;
     return proxyReqOpts;
   }
 };
